@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // create and add button on the view dynamatically, did not use IB
-        
         view.addSubview(loadButton)
         
         //setup button constraints
@@ -55,7 +54,7 @@ class ViewController: UIViewController {
 
     @objc func loadButtonTapped(sender: UIButton) {
         
-        //as clicked button, update button text and lookupKeyData by viewModel
+        //As clicked button, update button text and lookupKeyData by viewModel
         loadButton.setTitle("Loading...", for: .normal)
         
         viewModel.lookupKeyData()
