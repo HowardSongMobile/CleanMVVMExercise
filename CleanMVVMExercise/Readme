@@ -1,0 +1,17 @@
+Environment:
+-Xcode: 11.3
+-Swift: 5.1
+-iOS Deployment Target: 13.2
+-Simulator: iPhone 11 Pro Max
+
+
+Exercise Highlight
+-Using Swift Clean Architecture, and MVVM
+-The main purpose are making app layers to be a separated and decoupled to conform SOC(separation of concerns)principle
+-More better on testibility, expandibility, and maintainbility
+-Domain layer is business logic layer including entities, use cases, interface, etc
+-Presentation layer
+    -View: xib, storyboard. note: did not use these in this demo
+    -UIViewController with UIKit and/or SwiftUI
+    -ViewModel of MVVM: decoupled with View, did not use UIKit/SwiftUI frameworks
+-Data Layer - data repositories, CoreData (not use in demo), data mapping, and network sevices
