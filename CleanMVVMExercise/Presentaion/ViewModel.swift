@@ -12,8 +12,6 @@ import Foundation
 
 class ViewModel {
     
-    //var closureObserve: ((String) -> ())?
-    
     var observeVariable: ObservableObject<String> = ObservableObject("")
     
     init() {
@@ -23,16 +21,12 @@ class ViewModel {
         let access = DataAccess()
         access.fetchSingleKeyData(completeHandler: {[weak self](result, error) in
             if let result = result {
-                print("result = \(result)")
                 DispatchQueue.main.async {
                     let date = stringToDate(dateString: result)
                     let readableString = dateToReadableString(date: date ?? Date())
-                    //print(readableString!)
-                    //self.closureObserve!(readableString ?? "There was no key data")
                     self?.observeVariable.value = readableString ?? "There was no key data"
                 }
             }else{
-                //self.closureObserve!(error?.localizedDescription ?? "failed to get key data")
                 self?.observeVariable.value = error?.localizedDescription ?? "There was no key data"
             }
         })
