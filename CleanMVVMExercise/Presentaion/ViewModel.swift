@@ -24,10 +24,10 @@ class ViewModel {
                 DispatchQueue.main.async {
                     let date = stringToDate(dateString: result)
                     let readableString = dateToReadableString(date: date ?? Date())
-                    self?.observeVariable.value = readableString ?? "There was no key data"
+                    self?.observeVariable.value = readableString ?? "There was no key data."
                 }
             }else{
-                self?.observeVariable.value = error?.localizedDescription ?? "There was no key data"
+                self?.observeVariable.value = error?.localizedDescription ?? "There was no key data."
             }
         })
     }
