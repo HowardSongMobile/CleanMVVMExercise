@@ -15,11 +15,7 @@ class ViewController: UIViewController {
         button.setTitle("Click to Load", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 5.0
-        //button.layer.borderColor = UIColor.gray.cgColor
-        //button.layer.borderWidth = 1.0
         button.backgroundColor = .blue
-        
-        //button.frame = CGRect(x: 0, y: 0, width: 300, height: 50)
         return button
     }()
     
@@ -39,15 +35,6 @@ class ViewController: UIViewController {
         loadButton.widthAnchor.constraint(equalToConstant: 260).isActive = true
         loadButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         loadButton.addTarget(self, action: #selector(loadButtonTapped), for: .touchUpInside)
-        /*
-        viewModel.closureObserve = {[unowned self]keydata in
-            print("view got key data - \(keydata)")
-            self.loadButton.setTitle("Click to Load", for: .normal)
-            let alertController = UIAlertController(title: "Last Modified", message: keydata, preferredStyle: .alert)
-            let alertAction = UIAlertAction(title: NSLocalizedString("OK", comment: "OK"), style: .default, handler: nil)
-            alertController.addAction(alertAction)
-            self.present(alertController, animated: true, completion: nil)
-        }*/
         
         //create an observe by closure based Observerable, other observes could be RxSwift, KVO, protocol, ...
         viewModel.observeVariable.observe(){ [unowned self] keyData in
